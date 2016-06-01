@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="myApp"> <!-- Ativa/Starta o ANGULAR -->
+<head>
+	<title>Setima Aula</title>
+	
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+	<script type="text/javascript" src="vendor/angularjs/angular.js"></script>
+	<script type="text/javascript" src="js/myApp.js"></script>
+	<script type="text/javascript" src="js/controller/MeuController.js"></script>
+
+	<!-- O script abaixo é obrigatório para que o angular funcione com arquivos JS separados 
+	<script>
+		angular.module('myApp', []).controller('MeuController', function($scope) {
+			$scope.pessoa = [{
+				varNome : 'Leandro',
+				varMail : 'lcichelero@ciss.com.br'
+			},{
+				varNome : 'Pedro',
+				varMail : 'pedro@ciss.com.br'
+			}];
+			//Mensagem
+			$scope.msg = 'Isso está visivel!';
+
+			//Função
+			$scope.mostrarFn = function(){
+				$scope.mostrar = !$scope.mostrar;
+			}
+		})
+	</script>
+
+	-->
+</head>
+<body ng-controller="MeuController">
+	<div class="container">
+
+		<h1>AngularJS!</h1>
+
+		
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nome</th>
+					<th>Telefone</th>
+					<th>E-Mail</th>	
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Leandro</td>
+					<td>(46) 8801-7989</td>
+					<td>lcichelero@ciss.com.br</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Kelly</td>
+					<td>(46) 88022-73349</td>
+					<td>lcichelero@ciss.com.br</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Pedro Lucas</td>
+					<td>(46) 8801-7989</td>
+					<td>lcichelero@ciss.com.br</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Sandrinha </td>
+					<td>(46) 88022-73349</td>
+					<td>lcichelero@ciss.com.br</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
