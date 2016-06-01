@@ -22,5 +22,11 @@ myApp.controller('MeuController', function($scope) {
 		email : 'sandrinha@gmail.com.br'
 	}];
 
-	console.log($scope.dados);
+	$scope.enviaDados = function( pessoa ){
+		var newPessoa = angular.copy(pessoa);
+		$scope.dados.push(newPessoa);
+		$scope.pessoa = {};
+		
+	}
+
 })

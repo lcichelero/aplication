@@ -13,15 +13,53 @@
 <body ng-controller="MeuController">
 	<div class="container">
 
-		<h1>AngularJS!</h1>
-
-
 		<!--Atalho para criar 
 
 		table.table>(thead>tr>th*3)+(tbody>(tr>td*3)*3)
 
 		-->
+		<div class="row">
 
+			<!-- Atalho para criar formulário 
+
+			(.form-group>label+input)*3+button.btn.btn-sucess
+
+			-->
+
+
+			<form  id="meuFormulario"> 
+
+				<div class="row">
+					<div class="col-xs-6">
+						<h1>Cadastro de Contatos</h1>
+						<div class="form-group">
+							<label>ID</label>
+							<input ng-model="pessoa.id" tabindex=1 class="form-control" type="number" placeholder="Insira o ID do vivente"></input>
+						</div>		
+						<div class="form-group">
+							<label>Nome</label>
+							<input ng-model="pessoa.nome" tabindex=1 class="form-control" type="text" placeholder="Insira o nome do contato"></input>
+						</div>		
+						<div class="form-group">
+							<label>Telefone</label>
+							<input ng-model="pessoa.telefone" tabindex=2 class="form-control" type="number"  placeholder="(XX) 9999-9999"</input>
+						</div>
+						<div class="form-group">
+							<label>Email</label>
+							<input ng-model="pessoa.email" tabindex=3 class="form-control" type="email"  placeholder="Insira um e-mail válido"</input>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="align-center">
+					<button ng-click="enviaDados(pessoa)" tabindex=6 class="btn btn-success" type="submit">Enviar</button>
+				</div>
+			</form>
+		</div>
+
+		<br>
+		<br>
 		
 		<table class="table table-hover table-bordered">
 			<thead>
