@@ -27,34 +27,37 @@
 			-->
 
 
-			<form  id="meuFormulario"> 
+			<form  ng-submit="enviaDados(pessoa)"> 
 
 				<div class="row">
 					<div class="col-xs-6">
 						<h1>Cadastro de Contatos</h1>
 						<div class="form-group">
 							<label>ID</label>
-							<input ng-model="pessoa.id" tabindex=1 class="form-control" type="number" placeholder="Insira o ID do vivente"></input>
+							<input ng-click="clearMsg()" ng-model="pessoa.id" tabindex=1 class="form-control" type="number" placeholder="Insira o ID do vivente" required></input>
 						</div>		
 						<div class="form-group">
 							<label>Nome</label>
-							<input ng-model="pessoa.nome" tabindex=1 class="form-control" type="text" placeholder="Insira o nome do contato"></input>
+							<input ng-click="clearMsg()"ng-model="pessoa.nome" tabindex=1 class="form-control" type="text" placeholder="Insira o nome do contato" required minlength="2" ></input>
 						</div>		
 						<div class="form-group">
 							<label>Telefone</label>
-							<input ng-model="pessoa.telefone" tabindex=2 class="form-control" type="number"  placeholder="(XX) 9999-9999"</input>
+							<input ng-click="clearMsg()"ng-model="pessoa.telefone" tabindex=2 class="form-control" type="number" minlength="8" placeholder="(XX) 9999-9999" required</input>
 						</div>
 						<div class="form-group">
 							<label>Email</label>
-							<input ng-model="pessoa.email" tabindex=3 class="form-control" type="email"  placeholder="Insira um e-mail válido"</input>
+							<input ng-click="clearMsg()"ng-model="pessoa.email" tabindex=3 class="form-control" type="email"  placeholder="Insira um e-mail válido" required</input>
 						</div>
 
 					</div>
 				</div>
 
 				<div class="align-center">
-					<button ng-click="enviaDados(pessoa)" tabindex=6 class="btn btn-success" type="submit">Enviar</button>
+					<button  tabindex=6 class="btn btn-success" type="submit">Enviar</button>
 				</div>
+				<br>
+				<div class="clearfix"></div>
+				<div ng-show="msgAlert" class="alert alert-danger">Cadastro invávido</h3>
 			</form>
 		</div>
 

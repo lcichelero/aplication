@@ -1,5 +1,8 @@
 //A Variavel myApp foi criada no arquivo myApp.js
 myApp.controller('MeuController', function($scope) {
+	
+	$scope.pessoa = {}; //Instancia o objeto newPessoa
+
 	$scope.dados = [{
 		id : 1,
 		nome : 'Leandro Cichelero',
@@ -23,10 +26,11 @@ myApp.controller('MeuController', function($scope) {
 	}];
 
 	$scope.enviaDados = function( pessoa ){
-		var newPessoa = angular.copy(pessoa);
-		$scope.dados.push(newPessoa);
-		$scope.pessoa = {};
-		
+
+	var newPessoa = angular.copy(pessoa);
+	$scope.dados.push(newPessoa);
+	$scope.pessoa = {};
+
 	}
 
 })
