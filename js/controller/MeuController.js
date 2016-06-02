@@ -2,6 +2,8 @@
 myApp.controller('MeuController', function($scope) {
 	
 	$scope.pessoa = {}; //Instancia o objeto newPessoa
+	$scope.caption = 'Enviar';
+
 
 	$scope.dados = [{
 		id : 1,
@@ -25,12 +27,36 @@ myApp.controller('MeuController', function($scope) {
 		email : 'sandrinha@gmail.com.br'
 	}];
 
+
+	//Salvar dados
 	$scope.enviaDados = function( pessoa ){
+		if ($scope.caption == 'Enviar'){
+			var newPessoa = angular.copy(pessoa);
+			$scope.dados.push(newPessoa);
+			delete $scope.pessoa;
 
-	var newPessoa = angular.copy(pessoa);
-	$scope.dados.push(newPessoa);
-	$scope.pessoa = {};
-
+		}else{
+			var newPessoa = angular.copy(pessoa);
+			$scope.dados[ $scope.idx ] = newPessoa;
+			delete $scope.pessoa;
+			$scope.caption = 'Enviar';			
+		}
 	}
 
+	//Excluir dados
+	$scope.excluirDados = function(item){
+
+		$scope.dados.splice(item,1);
+		delete $scope.pessoa;
+		$scope.caption = 'Enviar';
+	}
+
+	$scope.editarDados = function( item ){
+		$scope.idx = item ;
+		$scope.caption = 'Atualizar';
+		$scope.pessoa = angular.copy( $scope.dados[ item ] );
+		
+	}
+	
+    
 })
